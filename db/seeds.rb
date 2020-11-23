@@ -14,7 +14,7 @@ AssociateOrderItem.destroy_all
 Carditem.destroy_all
 Order.destroy_all
 
-10.times do
+20.times do
   Item.create(title: Faker::Lorem.sentence(word_count: 2), description: Faker::Lorem.sentence(word_count: 10), price: 15, image_url: "https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg")
 end
   
