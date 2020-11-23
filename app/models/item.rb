@@ -6,4 +6,7 @@ class Item < ApplicationRecord
 
     has_many :carditems
     has_many :carts, through: :carditems
+
+    has_many :associate_order_items
+    has_many :order, through: :associate_order_items
 end
