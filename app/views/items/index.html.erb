@@ -1,1 +1,34 @@
 <%= render "layouts/small_banner"%>
+<main class="container">
+  <div class="row row-cols-4 row-cols-md-3 col-sm-12 p-md-0 m-md-0 d-flex justify-content-center">
+
+  <% @items.each do |item| %>
+    <div class="col-sm-12 col-12 col-md-4">
+      <a href="<%= item_path(item.id) %>" class="card-clic">
+        <div class="card border-secondary mb-4 card-index">
+          <div class="card-header p-0">
+            <%= image_tag item.image_url, :size => "400x500", :crop => :fill, class: "card-img-top" %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title"><%= item.title %></h4>
+            <p class="card-text"><%= item.race %></p>
+            <p class="card-text"><%= item.price %> €</p>
+          </div>
+          <div class="card-footer">
+            <%= link_to "Voir plus", item_path(item.id) , class:"btn btn-outline-dark mx-1 my-1" %>
+            <% if user_signed_in?%>
+              <%= link_to cart_path(item.id), class: "color_cart", remote: true, method: "PUT" do %>
+                <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path, class: "color_cart", method: "GET" do %>
+                <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
+  </div>
+</main>
