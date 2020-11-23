@@ -1,20 +1,20 @@
-<%= render "layouts/small_banner"%>
+<%= render "layouts/banner"%>
+<h2 class="text-center pb-4">Notre collection de jouets</h2>
 <main class="container">
-  <div class="row row-cols-4 row-cols-md-3 col-sm-12 p-md-0 m-md-0 d-flex justify-content-center">
+  <div class="row row-cols-4 row-cols-md-1 col-sm-12 p-md-0 m-md-0 d-flex justify-content-center">
 
   <% @items.each do |item| %>
     <div class="col-sm-12 col-12 col-md-4">
       <a href="<%= item_path(item.id) %>" class="card-clic">
-        <div class="card border-secondary mb-4 card-index">
+        <div class="card border-black mb-4 card-index">
           <div class="card-header p-0">
-            <%= image_tag item.image_url, :size => "400x500", :crop => :fill, class: "card-img-top" %>
+            <%= image_tag item.image_url, :size => "400x350", :crop => :fill, class: "card-img-top" %>
           </div>
           <div class="card-body">
-            <h4 class="card-title"><%= item.title %></h4>
-            <p class="card-text"><%= item.price %> €</p>
+            <h4 class="card-title-product no-style-product mx-1 my-1"><%= item.title %><small class="float-right text-muted"><%= item.price %> €</small></h4>
           </div>
           <div class="card-footer">
-            <%= link_to "Voir plus", item_path(item.id) , class:"btn btn-outline-dark mx-1 my-1" %>
+            <%= link_to "Voir plus", item_path(item.id) , class:"btn btn-outline-secondary mx-1 my-1" %>
             <% if user_signed_in?%>
               <%= link_to cart_path(item.id), class: "color_cart", remote: true, method: "PUT" do %>
                 <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
