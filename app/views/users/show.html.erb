@@ -8,6 +8,19 @@
 
 <div class="container">
     <div class="row">
+    <% if @user.orders.all.first == nil %>
+    <div class="col">
+        <div class="jumbotron mt-70" style="padding:0;">
+            <div class="d-flex align-items-center h-100">
+                <div class="container text-center py-5">
+                <h3 class="mb-0">Vous n'avez jamais effectuez de commande.</h3>
+                <p class="mb-0">Vos futures commandes s'afficheront ici</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% else %>
+        <h1> Past Order : </h1>
         <% @user.orders.each do |order|%>
             <table class="table table-striped table-sm">
                 <thead>
@@ -22,7 +35,7 @@
                     <tbody>
                         <tr>
                             <td><img src="<%=item_select.image_url%>" class="img-radius" alt="User-Profile-Image" style="width: 50px"></td>
-                            <td><%= item_select.title %></td>
+                            <td><%= link_to item_select.title, item_path(item_select.id) %></td>
                             <td><%= item_select.description %></td>
                             <td><%= item_select.price %></td>
                         </tr>
@@ -30,5 +43,6 @@
                 <% end%>
             </table>
         <% end%>
+    <% end %>
     </div>
 </div>
