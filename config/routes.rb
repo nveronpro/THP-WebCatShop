@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'carts/show'
   devise_for :users
 
   resources :users
@@ -7,5 +6,8 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items
   resources :carts
+  resources :carditems
+
+  post '/carditems/:id', to: 'carditems#create', as: 'panier'
 
 end
