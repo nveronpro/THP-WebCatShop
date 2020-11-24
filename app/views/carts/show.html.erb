@@ -21,6 +21,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Delete</th>
                     </tr>
                 </thead>
                 <% price = 0%>
@@ -31,6 +32,7 @@
                             <td><%= link_to item_select.title, item_path(item_select.id) %></td>
                             <td><%= item_select.description %></td>
                             <td><%= item_select.price %></td>
+                            <td><%= link_to 'Delete', carditem_path(item_select), method: :delete%></td>
                             <% price = price + item_select.price%>
                         </tr>
                     </tbody>
