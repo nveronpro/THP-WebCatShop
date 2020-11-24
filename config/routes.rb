@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   post '/carditems/:id', to: 'carditems#create', as: 'panier'
 
+  resources :items, only: [:show] do
+    resources :avatars, only: [:create]
+  end
+
 end
