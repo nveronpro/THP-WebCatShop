@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items
   resources :carts
+  resources :carditems
+
+  post '/carditems/:id', to: 'carditems#create', as: 'panier'
 
 end

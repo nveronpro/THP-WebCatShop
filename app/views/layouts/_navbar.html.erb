@@ -32,6 +32,8 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "Mon profil", user_path(current_user.id), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
+                <%= link_to "Mon paniner", cart_path(current_user), :class =>"dropdown-item" %>
+                <div class="dropdown-divider"></div>
                 <%= link_to "Éditer mon profil", edit_user_registration_path(current_user.id), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class =>"dropdown-item" %>
