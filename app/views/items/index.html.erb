@@ -11,7 +11,7 @@
             <%= image_tag item.image_url, :size => "400x350", :crop => :fill, class: "card-img-top" %>
           </div>
           <div class="card-body">
-            <h4 class="card-title-product no-style-product mx-1 my-1"><%= item.title %><small class="float-right text-muted"><%= item.price %> €</small></h4>
+            <h4 class="card-title-product no-style-product mx-1 my-1"><%= item.title %><br><small class="float-right text-muted"><%= item.price %> €</small></h4>
           </div>
           <div class="card-footer">
             <%= link_to "Voir plus", item_path(item.id) , class:"btn btn-outline-secondary mx-1 my-1" %>
