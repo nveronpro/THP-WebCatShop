@@ -28,7 +28,11 @@
                 <% @cart.items.each do |item_select|%>
                     <tbody>
                         <tr>
-                            <td><img src="<%=item_select.image_url%>" class="img-radius" alt="User-Profile-Image" style="width: 50px"></td>
+                            <% if item_select.avatar.attached? %>
+                                <td><%= image_tag item_select.avatar, style: "width: 50px", :crop => :fill, class: "card-img-top" %></td>
+                            <% else %>
+                                <td><%= image_tag "https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg", style: "width: 50px", :crop => :fill, class: "card-img-top" %></td>
+                            <% end %>
                             <td><%= link_to item_select.title, item_path(item_select.id) %></td>
                             <td><%= item_select.description %></td>
                             <td><%= item_select.price %>€</td>
