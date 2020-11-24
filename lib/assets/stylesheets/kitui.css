@@ -5286,6 +5286,8 @@ a.badge-dark:focus, a.badge-dark.focus {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 500px;
+  background-position: center;
 }
 
 .jumbotron {

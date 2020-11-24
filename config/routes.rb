@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :carditems
 
   post '/carditems/:id', to: 'carditems#create', as: 'panier'
+  get '/histoire', to: 'static_pages#history'
+  get '/contact', to: 'static_pages#contact'
 
 end
