@@ -9,7 +9,11 @@
 <div class="container">	
     <div class="row">  
         <div class="col col-md-6">
-            <img src="<%=@item.image_url%>" class="img-radius" alt="User-Profile-Image"> 
+            <% if @item.avatar.attached?%>
+                <div class="m-b-25"> <%= image_tag @item.avatar, alt: 'avatar', :size => "500x500", :crop => :fill, class: "img-radius" %> </div>
+            <% else %>
+                <div class="m-b-25"> <img src="https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg" class="img-radius" alt="User-Profile-Image"> </div>
+            <% end %> 
         </div>
         <div class="col col-md-6">
             <h1><%=@item.title%></h1>
@@ -29,3 +33,7 @@
     </div>	
 </div>
 <br><br><br><br><br>
+<%= form_tag item_avatars_path(@item), multipart: true do %>
+    <%= file_field_tag :avatar, class: "text-center" %>
+    <%= submit_tag "mettre à jour" , class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
