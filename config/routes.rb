@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :items
   resources :carts
   resources :carditems
-
+  resources :charges
   post '/carditems/:id', to: 'carditems#create', as: 'panier'
 
   resources :items, only: [:show] do
