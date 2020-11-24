@@ -2064,7 +2064,7 @@ pre code {
   background-color: #fff;
   border-color: #d0eae2;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
+  box-shadow: 0 0 0 0.2rem #048c9662;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2754,14 +2754,14 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #ff7851;
-  border-color: #ff7851;
+  background-color: #ff6161;
+  border-color:  #ff6161;
 }
 
 .btn-danger:hover {
   color: #fff;
-  background-color: #ff5a2b;
-  border-color: #ff501e;
+  background-color: #ff3838;
+  border-color:#ec3434;
 }
 
 .btn-danger:focus, .btn-danger.focus {
@@ -3413,7 +3413,7 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #f3969a;
+  background-color: #009CA6;
 }
 
 .dropdown-item.active, .dropdown-item:active {
