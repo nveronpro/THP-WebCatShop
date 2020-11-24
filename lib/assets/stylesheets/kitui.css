@@ -166,6 +166,12 @@ a {
   background-color: transparent;
 }
 
+.hr-product {
+  width: 20%;
+  border: 1px solid var(--primary);
+  margin: 0;
+}
+
 .color_cart {
   color: #009CA6;
   transition: .3s;
@@ -2918,8 +2924,8 @@ fieldset:disabled a.btn {
 .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
   color: #fff;
-  background-color: #f3969a;
-  border-color: #f3969a;
+  background-color: #1b3041;
+  border-color: #1b3041;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
@@ -3419,7 +3425,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #78c2ad;
+  background-color: #009ba6c9;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {

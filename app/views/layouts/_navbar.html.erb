@@ -32,7 +32,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "Mon profil", user_path(current_user.id), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "Mon paniner", cart_path(current_user), :class =>"dropdown-item" %>
+                <%= link_to "Mon panier", cart_path(current_user), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Éditer mon profil", edit_user_registration_path(current_user.id), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
