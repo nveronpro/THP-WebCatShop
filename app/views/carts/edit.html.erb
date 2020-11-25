@@ -1,0 +1,34 @@
+<div class="container">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <%= form_for @cart do |f| %>
+      <% if @cart.errors.any? %>
+      <h4><%= pluralize(@cart.errors.count, "error") %> prevented this message from saving</h4>
+        <ul>
+          <% @cart.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+            <% end %>
+        </ul>
+        <% end %>
+    <div class="form-group">
+        <label>Adresse </label>
+        <%= f.text_field :adress, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <label>Adresse complementaire </label>
+        <%= f.text_field :adress_sup, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <label>Ville</label>
+        <%= f.text_field :ville, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <label>Code postale</label>
+        <%= f.text_field :code, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+    <% end %>
+</div>

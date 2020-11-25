@@ -24,7 +24,7 @@
                     <th>Delete</th>
                     </tr>
                 </thead>
-                <% price = 0%>
+                <% @cart.price = 0%>
                 <% @cart.items.each do |item_select|%>
                     <tbody>
                         <tr>
@@ -37,15 +37,30 @@
                             <td><%= item_select.description %></td>
                             <td><%= item_select.price %>€</td>
                             <td><%= link_to 'Delete', carditem_path(item_select), method: :delete%></td>
-                            <% price = price + item_select.price%>
+                            <% @cart.price = @cart.price + item_select.price%>
                         </tr>
                     </tbody>
                 <% end%>
                 <thead>
+                    <div>
+                        <td>
+                            <br><br><p style="font-weight: 800;">Delivery Address</p>
+                            <% if @cart.adress && @cart.code && @cart.ville && @cart.adress != "" && @cart.code != "" && @cart.ville != "" %>
+                                <p><%= @cart.adress %><br><%= @cart.adress_sup %><br><%= @cart.ville %>, <%= @cart.code %></p>
+                            <% else %>
+                                <p>Aucune adresse ou adresse incomplete</p>
+                            <% end %>
+                        </td>
+                    </div>
+                        <th><%= link_to "Modifie l'adresse", edit_cart_path(@cart), class: "btn btn-primary" %></th>
+                
                     <tr>
-                    <th>Price : <%= price %>€</th>
-                    <th><%= link_to "Payer", new_charge_path, class: "btn btn-primary" %>
-                    </th>
+                    <th>Price : <%= @cart.price %>€</th>
+                    <% if @cart.adress && @cart.code && @cart.ville && @cart.adress != "" && @cart.code != "" && @cart.ville != "" %>
+                        <th><%= link_to "Payer", new_charge_path, class: "btn btn-primary" %></th>
+                    <% else %>
+                        <th>Veuillez changer l'adresse</th>
+                    <% end %>
                     </tr>
                 </thead>
             </table>
