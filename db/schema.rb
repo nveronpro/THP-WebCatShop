@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_154423) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.bigint "cart_id"
+    t.boolean "is_admin?"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

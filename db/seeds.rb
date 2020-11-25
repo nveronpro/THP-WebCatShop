@@ -13,3 +13,6 @@ Carditem.destroy_all
 AssociateOrderItem.destroy_all
 Carditem.destroy_all
 Order.destroy_all
+
+cart_tmp = Cart.create
+User.create(email: "nico@yopmail.com", password: "password", cart: cart_tmp, is_admin?: true)
