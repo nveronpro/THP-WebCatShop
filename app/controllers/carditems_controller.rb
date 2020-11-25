@@ -13,9 +13,9 @@ class CarditemsController < ApplicationController
     end
 
     def destroy
-        @carditem = find_carditem
-        @carditem.first.delete
-        redirect_to '/'
+        @carditem = find_carditem.sample
+        @carditem.delete
+        redirect_to cart_path(current_user)
     end
 
     private 
