@@ -24,7 +24,9 @@ before_action :authenticate_user!
     })
 
     @order = Order.create(user_id: current_user.id)
-
+    @cart.items.each do |item|
+      AssociateOrderItem.create(order: @order, item: item)
+    end
     @cart.items.destroy_all
   
   rescue Stripe::CardError => e
