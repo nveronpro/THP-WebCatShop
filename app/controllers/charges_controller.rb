@@ -2,12 +2,13 @@ class ChargesController < ApplicationController
 before_action :authenticate_user!
 
   def new
-   @user=current_user.email
+   @user = current_user.email
   end
   
   def create
     # Amount in cents
-    @amount = 500
+    @cart = current_user.cart
+    @amount = @cart.items.pluck(:price).sum.to_i * 100
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -18,11 +19,14 @@ before_action :authenticate_user!
       customer: customer.id,
       amount: @amount,
       description: 'Rails Stripe customer',
-      currency: 'usd',
+      currency: 'eur',
     })
+
+    @order = Order.create(user_id: current_user.id)
   
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
   end
+
 end
