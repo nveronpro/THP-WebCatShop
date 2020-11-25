@@ -34,7 +34,7 @@
                 <% order.item.each do |item_select|%>
                     <tbody>
                         <tr>
-                            <td><img src="<%=item_select.image_url%>" class="img-radius" alt="User-Profile-Image" style="width: 50px"></td>
+                            <td><%= image_tag item_select.avatar, class: "card-img-top", style:"width: 50px" %></td>
                             <td><%= link_to item_select.title, item_path(item_select.id) %></td>
                             <td><%= item_select.description %></td>
                             <td><%= item_select.price %></td>
