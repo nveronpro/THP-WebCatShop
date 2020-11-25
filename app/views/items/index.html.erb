@@ -8,15 +8,19 @@
       <a href="<%= item_path(item.id) %>" class="card-clic">
         <div class="card border-black mb-4 card-index">
           <div class="card-header p-0">
-            <%= image_tag item.image_url, :size => "400x350", :crop => :fill, class: "card-img-top" %>
+            <% if item.avatar.attached? %>
+              <%= image_tag item.avatar, :size => "400x350", :crop => :fill, class: "card-img-top" %>
+            <% else %>
+              <%= image_tag "https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg", :size => "400x350", :crop => :fill, class: "card-img-top" %>
+            <% end %>
           </div>
           <div class="card-body">
-            <h4 class="card-title-product no-style-product mx-1 my-1"><%= item.title %><small class="float-right text-muted"><%= item.price %> €</small></h4>
+            <h4 class="card-title-product no-style-product mx-1 my-1"><%= item.title %><br><small class="float-right text-muted"><%= item.price %> €</small></h4>
           </div>
           <div class="card-footer">
             <%= link_to "Voir plus", item_path(item.id) , class:"btn btn-outline-secondary mx-1 my-1" %>
             <% if user_signed_in?%>
-              <%= link_to cart_path(item.id), class: "color_cart", remote: true, method: "PUT" do %>
+              <%= link_to panier_path(item), class: "color_cart", method: "POST" do %>
                 <i class="fas fa-shopping-cart fa-lg float-right mt-3 mr-2"></i>
               <% end %>
             <% else %>

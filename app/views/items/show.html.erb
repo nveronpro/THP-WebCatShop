@@ -5,17 +5,35 @@
         </div>
     </div>
 </div>
-
+<hr class="my-4 hr-jumbo">
 <div class="container">	
     <div class="row">  
         <div class="col col-md-6">
-            <img src="<%=@item.image_url%>" class="img-radius" alt="User-Profile-Image"> 
+            <% if @item.avatar.attached?%>
+                <div class="m-b-25"> <%= image_tag @item.avatar, alt: 'avatar', :size => "500x500", :crop => :fill, class: "img-radius" %> </div>
+            <% else %>
+                <div class="m-b-25"> <img src="https://pajulahti.com/wp-content/uploads/2017/04/500x500.jpeg" class="img-radius" alt="User-Profile-Image"> </div>
+            <% end %> 
         </div>
         <div class="col col-md-6">
-            <h1><%=@item.title%></h1><br> 
+            <h1><%=@item.title%></h1>
+            <hr class="hr-product my-4">
+            <span class="ml-2 font-weight-bold"><%=@item.price%> €</span>
+            <br><br> 
             <p>description : <%=@item.description%></h1><br>
-            <p>price : <%=@item.price%></h1>
+            <p>Sélecteur de quantité</p><br>
+            <% if user_signed_in? %>
+            <div>
+                <%= link_to panier_path(@item), class:"btn btn-outline-primary my-2 py-2 pl-2 pr-2 my-sm-0", method: "POST" do %>
+                Ajouter au panier<span class="fas fa-shopping-cart ml-2"></span>
+                <% end %>
+            </div>
+            <% end %>
         </div>
     </div>	
 </div>
 <br><br><br><br><br>
+<%= form_tag item_avatars_path(@item), multipart: true do %>
+    <%= file_field_tag :avatar, class: "text-center" %>
+    <%= submit_tag "mettre à jour" , class: "btn btn-lg btn-primary btn-block" %>
+<% end %>

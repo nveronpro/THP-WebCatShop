@@ -166,6 +166,12 @@ a {
   background-color: transparent;
 }
 
+.hr-product {
+  width: 20%;
+  border: 1px solid var(--primary);
+  margin: 0;
+}
+
 .color_cart {
   color: #009CA6;
   transition: .3s;
@@ -2064,7 +2070,7 @@ pre code {
   background-color: #fff;
   border-color: #d0eae2;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
+  box-shadow: 0 0 0 0.2rem #048c9662;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2754,14 +2760,14 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #ff7851;
-  border-color: #ff7851;
+  background-color: #ff6161;
+  border-color:  #ff6161;
 }
 
 .btn-danger:hover {
   color: #fff;
-  background-color: #ff5a2b;
-  border-color: #ff501e;
+  background-color: #ff3838;
+  border-color:#ec3434;
 }
 
 .btn-danger:focus, .btn-danger.focus {
@@ -2918,8 +2924,8 @@ fieldset:disabled a.btn {
 .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
   color: #fff;
-  background-color: #f3969a;
-  border-color: #f3969a;
+  background-color: #1b3041;
+  border-color: #1b3041;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
@@ -3413,13 +3419,13 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #f3969a;
+  background-color: #009CA6;
 }
 
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #78c2ad;
+  background-color: #009ba6c9;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -5280,6 +5286,8 @@ a.badge-dark:focus, a.badge-dark.focus {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 500px;
+  background-position: center;
 }
 
 .jumbotron {

@@ -28,7 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(items_params)
+    @item = Item.create(items_params)
+
     if @item.save
       redirect_to @item, notice: "New item created"
     else
@@ -39,7 +40,7 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:title, :description, :price, :image_url)
+    params.require(:item).permit(:title, :description, :price, :avatar)
   end
 
   def find_item
