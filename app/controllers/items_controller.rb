@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = find_item
     @item.delete
-    redirect_to '/'
+    redirect_to '/', notice: "Produit supprimé"
   end
 
   def create
