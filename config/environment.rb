@@ -5,8 +5,8 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_LOGIN'],
-  :password => ENV['SENDGRID_PWD'],
+  :user_name => Rails.application.credentials.mailer[:sendgrid_login],
+  :password => Rails.application.credentials.mailer[:sendgrid_pwd],
   :domain => 'monsite.fr',
   :address => 'smtp.sendgrid.net',
   :port => 587,

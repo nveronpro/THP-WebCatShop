@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_154423) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
+    t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
@@ -65,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_154423) do
     t.string "title"
     t.text "description"
     t.decimal "price"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

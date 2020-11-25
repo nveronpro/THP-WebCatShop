@@ -3,6 +3,7 @@ before_action :authenticate_user!
 
   def new
    @user = current_user.email
+   @amount = current_user.cart.items.pluck(:price).sum.to_i * 100
   end
   
   def create
