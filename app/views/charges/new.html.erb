@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row my-3">
       <div class="col-md-12 mt-4 text-center">
-        <h1> Welcome  <%= @user %></h1>
+        <h1> Welcome <%= @user %></h1>
       </div>
   </div>
   <%= form_tag charges_path do %>
@@ -22,8 +22,9 @@
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description="A month's subscription"
-              data-amount="500"
-              data-locale="auto">
+              data-amount="<%= @amount%> "
+              data-locale="auto"
+              data-currency="eur">
       </script>
     </div>
   </div>
