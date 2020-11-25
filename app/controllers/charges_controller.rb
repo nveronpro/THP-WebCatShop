@@ -24,6 +24,8 @@ before_action :authenticate_user!
     })
 
     @order = Order.create(user_id: current_user.id)
+
+    @cart.items.destroy_all
   
   rescue Stripe::CardError => e
     flash[:error] = e.message
