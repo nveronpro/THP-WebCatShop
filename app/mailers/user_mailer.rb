@@ -15,11 +15,10 @@ class UserMailer < ApplicationMailer
     def order_email(order)
       @order = order 
       @user = User.find(order.user_id)
+      @admin = User.find_by(is_admin?: true)
       @cart = @user.cart
       @url = 'http://monsite.fr'
-      puts "="*10
-      puts @cart.items.first.avatar
-      puts "="*10
       mail(to: @user.email, subject: 'Merci pour votre commande !')
+      mail(to: @admin.email, subject: 'Récapitulatif d\'une commande')
     end
 end
