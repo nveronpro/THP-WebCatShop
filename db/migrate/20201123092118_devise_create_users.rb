@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name,  null: false, default: ""
 
       t.belongs_to :cart
+      t.boolean :is_admin?
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
