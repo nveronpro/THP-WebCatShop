@@ -29,11 +29,12 @@
                 <% end %>
             </div>
             <% end %>
+            <% if user_signed_in? && current_user.is_admin? %>
+            <br><br><br><br><br><br><br>
+            <%= link_to 'Supprimer', item_path(@item), class:"btn btn-danger btn-lg my-2 py-2 pl-2 pr-2 my-sm-0", method: "delete" %>
+            <%= link_to 'Modifier', edit_item_path(@item), class:"btn btn-warning btn-lg my-2 py-2 pl-2 pr-2 my-sm-0" %>
+        <% end %>
         </div>
     </div>	
 </div>
 <br><br><br><br><br>
-<%= form_tag item_avatars_path(@item), multipart: true do %>
-    <%= file_field_tag :avatar, class: "text-center" %>
-    <%= submit_tag "mettre à jour" , class: "btn btn-lg btn-primary btn-block" %>
-<% end %>
