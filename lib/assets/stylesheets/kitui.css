@@ -5299,7 +5299,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-bottom: 2rem;
 }
 
-.jumbotron {
+.jumbotron-history {
   background-image: url(https://images.pexels.com/photos/12211/pexels-photo-12211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -5309,6 +5309,13 @@ a.badge-dark:focus, a.badge-dark.focus {
   background-size: cover;
   height: 500px;
   background-position: center;
+  border-radius: 0;
+}
+
+.jumbotron {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
   border-radius: 0;
 }
 
