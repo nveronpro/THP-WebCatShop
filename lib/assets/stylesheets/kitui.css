@@ -418,6 +418,7 @@ h6, .h6 {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+  color: #fff;
 }
 
 .display-1 {
@@ -5280,20 +5281,29 @@ a.badge-dark:focus, a.badge-dark.focus {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
-.jumbotron.banner-home {
-  background-image: url(https://images.pexels.com/photos/3661193/pexels-photo-3661193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+.jumbotron-banner-home {
+  background-image: url(https://images.pexels.com/photos/3661222/pexels-photo-3661222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 500px;
   background-position: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
 }
 
 .jumbotron {
+  background-image: url(https://images.pexels.com/photos/12211/pexels-photo-12211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+  border-radius: 0;
 }
 
 @media (min-width: 576px) {
