@@ -4804,6 +4804,12 @@ input[type="button"].btn-block {
   margin-bottom: 0;
 }
 
+.card-index:hover {
+  -webkit-box-shadow: 0px 0px 35px -13px rgba(0,0,0,0.59);
+  -moz-box-shadow: 0px 0px 35px -13px rgba(0,0,0,0.59);
+  box-shadow: 0px 0px 35px -13px rgba(0,0,0,0.59);
+}
+
 .card-text:last-child {
   margin-bottom: 0;
 }
@@ -5293,7 +5299,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   margin-bottom: 2rem;
 }
 
-.jumbotron {
+.jumbotron-history {
   background-image: url(https://images.pexels.com/photos/12211/pexels-photo-12211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -5303,6 +5309,13 @@ a.badge-dark:focus, a.badge-dark.focus {
   background-size: cover;
   height: 500px;
   background-position: center;
+  border-radius: 0;
+}
+
+.jumbotron {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
   border-radius: 0;
 }
 
