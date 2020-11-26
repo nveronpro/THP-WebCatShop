@@ -10,4 +10,6 @@ class Item < ApplicationRecord
 
     has_many :associate_order_items
     has_many :order, through: :associate_order_items
+
+    belongs_to :cat, optional: true
 end

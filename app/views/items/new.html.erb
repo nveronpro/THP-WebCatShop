@@ -20,6 +20,10 @@
         <%= f.text_field :title, class: 'form-control'%>
     </div>
     <div class="form-group">
+        <label>Catégorie de l'article </label>
+        <%= f.select :cat_id, Cat.pluck(:title, :id), :prompt => 'Select One', class: 'form-control' %>
+    </div>
+    <div class="form-group">
         <label>Description de l'article</label>
         <%= f.text_area :description, class: 'form-control'%>
     </div>

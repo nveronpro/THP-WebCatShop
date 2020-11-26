@@ -1,0 +1,23 @@
+<h1 class="text-center">Modifier la catégorie</h1>
+  <div class="container my-4">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <%= form_for @cat do |f| %>
+        <% if @cat.errors.any? %>
+        <h4><%= pluralize(@cat.errors.count, "error") %> prevented this message from saving</h4>
+          <ul>
+            <% @cat.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+              <% end %>
+          </ul>
+          <% end %>
+      <div class="form-group">
+          <label>Nom de la catégorie </label>
+          <%= f.text_field :title, class: 'form-control'%>
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+      <% end %>
+  </div>

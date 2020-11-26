@@ -9,16 +9,19 @@ class ItemsController < ApplicationController
 
   def edit
     @item = find_item
+    @cat = Cat.find(params[:id])
   end
 
   def update
     @item = find_item
     @item.update(items_params)
+    @item.errors
     redirect_to @item
   end
 
   def show
     @item = find_item
+    @cat = @item.cat
   end
 
   def destroy
@@ -29,7 +32,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(items_params)
-
     if @item.save
       redirect_to @item, notice: "New item created"
     else
@@ -40,7 +42,7 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:title, :description, :price, :avatar)
+    params.require(:item).permit(:title, :description, :price, :avatar, :cat_id)
   end
 
   def find_item

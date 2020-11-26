@@ -26,7 +26,13 @@
           </li>
           <% if user_signed_in? && current_user.is_admin?%>
           <li class="nav-item">
-            <%= link_to "Create product", new_item_path, :class =>"nav-link" %>
+            <%= link_to "Ajouter un produit", new_item_path, :class =>"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Ajouter une catégorie", new_cat_path, :class =>"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Voir les catégories", cats_path, :class =>"nav-link" %>
           </li>
           <% end%>
         </ul>

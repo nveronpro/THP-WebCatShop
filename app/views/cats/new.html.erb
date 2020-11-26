@@ -1,0 +1,14 @@
+ <h1 class="text-center my-4">Créer une catégorie</h1>
+ <div class="container mx-auto my-2 py-4">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= form_for @cat do |f| %>
+    <div class="form-group">
+      Nom de la catégorie<br />
+      <%= f.text_field :title, class: 'form-control'%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Créer la catégorie", class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>

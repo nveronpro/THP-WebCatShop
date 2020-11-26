@@ -1,0 +1,8 @@
+<div class="col col-md-6">
+  <h1><%= @cat.title %></h1>
+  <% if user_signed_in? && current_user.is_admin? %>
+  <br><br><br><br><br><br><br>
+  <%= link_to 'Supprimer', cat_path(@cat), class:"btn btn-danger btn-lg my-2 py-2 pl-2 pr-2 my-sm-0", method: "delete" %>
+  <%= link_to 'Modifier', edit_cat_path(@cat), class:"btn btn-warning btn-lg my-2 py-2 pl-2 pr-2 my-sm-0" %>
+<% end %>
+</div>
