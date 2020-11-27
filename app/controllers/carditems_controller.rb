@@ -6,7 +6,8 @@ class CarditemsController < ApplicationController
     def create
       @carditem = Carditem.new(item: find_item, cart: current_user.cart)
         if @carditem.save
-          redirect_to '/', notice: "Item Ajouté au panier"
+          flash[:success] = "Item ajouté au panier"
+          redirect_to '/'
         else
           render :new
         end

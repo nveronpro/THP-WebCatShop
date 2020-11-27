@@ -166,6 +166,14 @@ a {
   background-color: transparent;
 }
 
+span.text-white {
+  opacity: 0.8;
+}
+
+span.text-white:hover {
+  opacity: 1;
+}
+
 .hr-product {
   width: 20%;
   border: 1px solid var(--primary);

@@ -31,19 +31,23 @@
           <li class="nav-item">
             <%= link_to "Ajouter une catégorie", new_cat_path, :class =>"nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Voir les catégories", cats_path, :class =>"nav-link" %>
-          </li>
           <% end%>
         </ul>
+
+        <% if current_user.present? %>
+          <div class="nav-item">
+            <%= link_to cart_path(current_user), :class =>"nav-link" do %>
+              <span class="text-white">Mon Panier <i class="fas fa-shopping-cart fa-lg mr-2 text-footer"></i></span>
+            <% end %>
+          </div>          
+        <% end %>
+
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
               <button class="btn btn-secondary my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <span class="fa fa-user circle mr-1"></span> Mon compte</button>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= link_to "Mon profil", user_path(current_user.id), :class =>"dropdown-item" %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Mon panier", cart_path(current_user), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Éditer mon profil", edit_user_registration_path(current_user.id), :class =>"dropdown-item" %>
                 <div class="dropdown-divider"></div>

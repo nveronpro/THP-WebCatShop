@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container my-4">
     <div class="row">
     <% if @cart.items.all.first == nil %>
     <div class="col">
@@ -42,25 +42,9 @@
                     </tbody>
                 <% end%>
                 <thead>
-                    <div>
-                        <td>
-                            <br><br><p style="font-weight: 800;">Delivery Address</p>
-                            <% if @cart.adress && @cart.code && @cart.ville && @cart.adress != "" && @cart.code != "" && @cart.ville != "" %>
-                                <p><%= @cart.adress %><br><%= @cart.adress_sup %><br><%= @cart.ville %>, <%= @cart.code %></p>
-                            <% else %>
-                                <p>Aucune adresse ou adresse incomplete</p>
-                            <% end %>
-                        </td>
-                    </div>
-                        <th><%= link_to "Modifie l'adresse", edit_cart_path(@cart), class: "btn btn-primary" %></th>
-                
                     <tr>
                     <th>Price : <%= @cart.price %>€</th>
-                    <% if @cart.adress && @cart.code && @cart.ville && @cart.adress != "" && @cart.code != "" && @cart.ville != "" %>
-                        <th><%= link_to "Payer", new_charge_path, class: "btn btn-primary" %></th>
-                    <% else %>
-                        <th>Veuillez changer l'adresse</th>
-                    <% end %>
+                    <th><%= link_to "Faire une demande à Alice", new_charge_path, class: "btn btn-primary" %></th>
                     </tr>
                 </thead>
             </table>
