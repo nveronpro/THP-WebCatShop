@@ -60,3 +60,4 @@ gem "letter_opener", :group => :development
 gem 'dotenv-rails'
 gem 'devise', '~> 4.2'
 gem 'table_print'
+gem 'rails_admin', '~> 2.0'
