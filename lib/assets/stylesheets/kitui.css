@@ -174,6 +174,10 @@ span.text-white:hover {
   opacity: 1;
 }
 
+.logo {
+  width: 5.5em;
+}
+
 .hr-product {
   width: 20%;
   border: 1px solid var(--primary);
@@ -3428,13 +3432,13 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #009CA6;
+  background-color: #64c0b5;
 }
 
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #009ba6c9;
+  background-color: #64c0b5;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -6783,7 +6787,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #009CA6 !important;
+  background-color: #64c0b5 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,

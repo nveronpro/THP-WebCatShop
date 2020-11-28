@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(items_params)
     if @item.save
-      redirect_to @item, notice: "New item created"
+      redirect_to @item, notice: "Nouveau produit créé"
     else
       render :new
     end
