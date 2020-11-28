@@ -28,4 +28,8 @@ class CartsController < ApplicationController
   def find_cart
     @cart = Cart.find(params[:id])
   end
+
+  def send_email
+    UserMailer.ask_order_email(self).deliver_now
+  end
 end

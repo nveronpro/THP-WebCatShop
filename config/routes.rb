@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/carditems/:id', to: 'carditems#create', as: 'panier'
   get '/histoire', to: 'static_pages#history'
   get '/contact', to: 'static_pages#contact'
+  post '/commande', to: 'carts#end_email'
 
   resources :items, only: [:show] do
     resources :avatars, only: [:create]

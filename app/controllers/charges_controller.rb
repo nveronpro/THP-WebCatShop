@@ -3,13 +3,13 @@ before_action :authenticate_user!
 
   def new
    @user = current_user.email
-   @amount = current_user.cart.items.pluck(:price).sum.to_i * 100
+   @amount = current_user.cart.items.pluck(:price).sum.to_f * 100
   end
   
   def create
     # Amount in cents
     @cart = current_user.cart
-    @amount = @cart.items.pluck(:price).sum.to_i * 100
+    @amount = @cart.items.pluck(:price).sum.to_f * 100
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
