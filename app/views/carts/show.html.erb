@@ -44,7 +44,7 @@
                 <thead>
                     <tr>
                     <th>Price : <%= @cart.price %>€</th>
-                    <th><%= link_to "Faire une demande à Alice", commande_path, class: "btn btn-primary" %></th>
+                    <th><%= link_to "Faire une demande à Alice", commande_path(@cart), class: "btn btn-primary" %></th>
                     </tr>
                 </thead>
             </table>
