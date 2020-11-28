@@ -21,7 +21,7 @@
     </div>
     <% else %>
         <h1> Past Order : </h1>
-        <% @user.orders.each do |order|%>
+        <% @user.orders.reverse_each do |order|%>
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>

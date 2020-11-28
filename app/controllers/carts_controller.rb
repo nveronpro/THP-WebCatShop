@@ -19,6 +19,15 @@ class CartsController < ApplicationController
     @cart = find_cart
   end
 
+  def ask_email
+    @cart = find_cart
+    @order = Order.create(user_id: current_user.id)
+    @cart.items.each do |item|
+      AssociateOrderItem.create(order: @order, item: item)
+    end
+    @cart.items.destroy_all
+  end
+
   private
 
   def carts_params
@@ -27,9 +36,5 @@ class CartsController < ApplicationController
 
   def find_cart
     @cart = Cart.find(params[:id])
-  end
-
-  def send_email
-    UserMailer.ask_order_email(self).deliver_now
   end
 end
