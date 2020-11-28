@@ -1,4 +1,7 @@
 ## Bienvenue !
+
+Lien prod: https://lapins-d-alices-staging.herokuapp.com/
+
 Ceci est un projet qui dure plusieurs jours, dans lequel nous allons vous faire faire le projet via la méthodologie _agile_, en utilisant le principe des _user stories_. C'est une excellente méthodologie pour mettre en production très rapidement une version fonctionnelle d'un site.
 
 Ce projet a plusieurs objectifs :
